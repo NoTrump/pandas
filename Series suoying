@@ -21,18 +21,7 @@ employment_values = [
 employment = pd.Series(employment_values, index=countries)
 
 def max_employment(employment):
-    '''
-    Fill in this function to return the name of the country
-    with the highest employment in the given employment
-    data, and the employment in that country.
-    
-    The input will be a Pandas series where the values
-    are employment and the index is country names.
-    
-    Try using the Pandas argmax() function. Documention is
-    here: http://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.argmax.html
-    '''
-    max_country = None      # Replace this with your code
-    max_value = None   # Replace this with your code
+    max_country = employment.argmax()
+    max_value = employment.loc[max_country]
 
     return (max_country, max_value)
